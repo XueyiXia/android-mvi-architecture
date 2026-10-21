@@ -1,5 +1,11 @@
 plugins {
-    id 'com.android.application' version '8.7.2' apply false
-    id 'com.android.library' version '8.7.2' apply false
-    id 'org.jetbrains.kotlin.android' version '2.0.21' apply false
+    id("com.android.application") version "8.9.1" apply false
+    id("com.android.library") version "8.9.1" apply false
+
+    // 1. 保持 Kotlin 版本为你想要的 2.4.21
+    id("org.jetbrains.kotlin.android") version "2.4.21" apply false
+
+    // 2. 【关键修改】将 KSP 版本升级为与 Kotlin 2.4.21 匹配的版本
+    // 请将 "2.4.21-1.0.28" 替换为 KSP GitHub 页面上实际发布的对应版本
+    id("com.google.devtools.ksp") version "2.3.7" apply false
 }

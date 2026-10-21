@@ -9,10 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.framework.mvi.base.BaseMviFragment
 import com.jetpack.mvi.databinding.FragmentLoginBinding
 import com.jetpack.mvi.repository.LoginRepository
-import com.jetpack.mvi.viewmodel.LoginEffect
-import com.jetpack.mvi.viewmodel.LoginIntent
-import com.jetpack.mvi.viewmodel.LoginState
-import com.jetpack.mvi.viewmodel.LoginViewModel
+
 
 /**
  * @author: xiaxueyi
