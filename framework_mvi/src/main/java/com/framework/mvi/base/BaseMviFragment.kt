@@ -28,17 +28,17 @@ abstract class BaseMviFragment<
     protected abstract val viewModel: VM
     protected abstract fun inflateBinding(inflater: LayoutInflater, container: ViewGroup?): BINDING
 
-    private var _binding: BINDING? = null
-    protected val binding: BINDING
-        get() = _binding!!
+    private var mBinding: BINDING? = null
+    protected val mBindingView: BINDING
+        get() = mBinding!!
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = inflateBinding(inflater, container)
-        return binding.root
+        mBinding = inflateBinding(inflater, container)
+        return mBindingView.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -67,6 +67,6 @@ abstract class BaseMviFragment<
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        mBinding = null
     }
 }

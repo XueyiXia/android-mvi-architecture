@@ -45,22 +45,22 @@ class LoginFragment : BaseMviFragment<
     }
 
     override fun initView(rootView: View, savedInstanceState: Bundle?) {
-        binding.btnLogin.setOnClickListener {
-            val username = binding.etUsername.text?.toString().orEmpty()
-            val password = binding.etPassword.text?.toString().orEmpty()
+        mBindingView.btnLogin.setOnClickListener {
+            val username = mBindingView.etUsername.text?.toString().orEmpty()
+            val password = mBindingView.etPassword.text?.toString().orEmpty()
             viewModel.dispatch(LoginIntent.Login(username, password))
         }
     }
 
     override fun renderState(state: LoginState) {
-        binding.progressBar.visibility = if (state.loading) View.VISIBLE else View.GONE
-        binding.tvError.text = state.error ?: ""
-        binding.tvError.visibility = if (state.error.isNullOrEmpty()) View.GONE else View.VISIBLE
+        mBindingView.progressBar.visibility = if (state.loading) View.VISIBLE else View.GONE
+        mBindingView.tvError.text = state.error ?: ""
+        mBindingView.tvError.visibility = if (state.error.isNullOrEmpty()) View.GONE else View.VISIBLE
         if (state.loginSuccess) {
-            binding.tvSuccess.text = "登录成功"
-            binding.tvSuccess.visibility = View.VISIBLE
+            mBindingView.tvSuccess.text = "登录成功"
+            mBindingView.tvSuccess.visibility = View.VISIBLE
         } else {
-            binding.tvSuccess.visibility = View.GONE
+            mBindingView.tvSuccess.visibility = View.GONE
         }
     }
 

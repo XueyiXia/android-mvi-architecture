@@ -26,14 +26,14 @@ abstract class BaseMviActivity<
     protected abstract val viewModel: VM
     protected abstract fun inflateBinding(): BINDING
 
-    private var _binding: BINDING? = null
-    protected val binding: BINDING
-        get() = _binding!!
+    private var mBinding: BINDING? = null
+    protected val mBindingView: BINDING
+        get() = mBinding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = inflateBinding()
-        setContentView(binding.root)
+        mBinding = inflateBinding()
+        setContentView(mBindingView.root)
 
         lifecycleScope.launch {
             repeatOnLifecycle(Lifecycle.State.STARTED) {
@@ -47,7 +47,7 @@ abstract class BaseMviActivity<
             }
         }
 
-        initView(binding.root, savedInstanceState)
+        initView(mBindingView.root, savedInstanceState)
     }
 
     protected abstract fun initView(rootView: View, savedInstanceState: Bundle?)
@@ -58,6 +58,6 @@ abstract class BaseMviActivity<
 
     override fun onDestroy() {
         super.onDestroy()
-        _binding = null
+        mBinding = null
     }
 }
