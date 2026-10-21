@@ -3,8 +3,7 @@ setlocal
 set APP_HOME=%~dp0
 set CLASSPATH=%APP_HOME%gradle\wrapper\gradle-wrapper.jar
 if not exist "%CLASSPATH%" (
-  echo Gradle Wrapper JAR not found at %CLASSPATH%
-  echo Android Studio will generate it when you run the wrapper task or use a local Gradle installation.
+  echo Gradle Wrapper JAR missing. Run: gradlew.bat wrapper
   exit /b 1
 )
 if defined JAVA_HOME (
