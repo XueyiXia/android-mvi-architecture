@@ -10,12 +10,6 @@ import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-/**
- * @author: xiaxueyi
- * @date: 2025-10-21
- * @time: 17:00
- * @说明: MVI 基类 ViewModel
- */
 abstract class BaseMviViewModel<S : MviState, I : MviIntent, E : MviEffect>(
     initialState: S
 ) : ViewModel() {

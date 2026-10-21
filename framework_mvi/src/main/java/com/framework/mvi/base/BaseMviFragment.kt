@@ -11,12 +11,6 @@ import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import kotlinx.coroutines.launch
 
-/**
- * @author: xiaxueyi
- * @date: 2025-10-21
- * @time: 17:00
- * @说明: MVI Fragment 基类
- */
 abstract class BaseMviFragment<
     BINDING : ViewDataBinding,
     S : MviState,
@@ -49,7 +43,6 @@ abstract class BaseMviFragment<
                 launch {
                     viewModel.state.collect { renderState(it) }
                 }
-
                 launch {
                     viewModel.effect.collect { handleEffect(it) }
                 }
@@ -60,9 +53,7 @@ abstract class BaseMviFragment<
     }
 
     protected abstract fun initView(rootView: View, savedInstanceState: Bundle?)
-
     protected abstract fun renderState(state: S)
-
     protected open fun handleEffect(effect: E) = Unit
 
     override fun onDestroyView() {

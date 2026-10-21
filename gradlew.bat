@@ -3,7 +3,7 @@ setlocal
 set APP_HOME=%~dp0
 set CLASSPATH=%APP_HOME%gradle\wrapper\gradle-wrapper.jar
 if not exist "%CLASSPATH%" (
-  echo Gradle Wrapper JAR missing. Run: gradlew.bat wrapper
+  echo Missing gradle-wrapper.jar. Android Studio can generate it automatically when you sync the project.
   exit /b 1
 )
 if defined JAVA_HOME (
