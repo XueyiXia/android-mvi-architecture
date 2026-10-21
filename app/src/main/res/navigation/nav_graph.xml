@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.jetpack.mvi.ui.login.LoginFragment"
+        android:label="Login" />
+
+    <fragment
+        android:id="@+id/userListFragment"
+        android:name="com.jetpack.mvi.ui.userlist.UserListFragment"
+        android:label="User List" />
+
+    <fragment
+        android:id="@+id/userDetailFragment"
+        android:name="com.jetpack.mvi.ui.userdetail.UserDetailFragment"
+        android:label="User Detail" />
+
+</navigation>
