@@ -20,5 +20,8 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.navHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
+
+        // 如果需要默认跳到 userListFragment，可取消下面注释
+        // navController.navigate(R.id.userListFragment)
     }
 }

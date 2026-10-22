@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.framework.mvi.base.BaseMviFragment
+import com.jetpack.mvi.R
 import com.jetpack.mvi.databinding.FragmentLoginBinding
 import com.jetpack.mvi.repository.LoginRepository
-
 
 /**
  * @author: xiaxueyi
@@ -64,10 +66,10 @@ class LoginFragment : BaseMviFragment<
     override fun handleEffect(effect: LoginEffect) {
         when (effect) {
             is LoginEffect.ShowToast -> {
-                // Toast.makeText(requireContext(), effect.message, Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), effect.message, Toast.LENGTH_SHORT).show()
             }
             LoginEffect.NavigateHome -> {
-                // 可通过 NavController 跳转到 userListFragment
+                findNavController().navigate(R.id.userListFragment)
             }
         }
     }

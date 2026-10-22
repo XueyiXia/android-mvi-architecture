@@ -1,5 +1,6 @@
 package com.jetpack.mvi.ui.login
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -7,6 +8,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.framework.mvi.base.BaseMviActivity
+import com.jetpack.mvi.activities.MainActivity
 import com.jetpack.mvi.databinding.ActivityLoginBinding
 import com.jetpack.mvi.repository.LoginRepository
 
@@ -53,7 +55,9 @@ class LoginActivity : BaseMviActivity<
                 Toast.makeText(this, effect.message, Toast.LENGTH_SHORT).show()
             }
             LoginEffect.NavigateHome -> {
-                Toast.makeText(this, "跳转首页", Toast.LENGTH_SHORT).show()
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+                finish()
             }
         }
     }
